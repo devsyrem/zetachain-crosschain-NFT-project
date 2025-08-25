@@ -1,0 +1,28 @@
+{
+  "name": "Universal NFT Program - Development",
+  "version": "1.0.0",
+  "network": "devnet",
+  "programId": "UnivNFT111111111111111111111111111111111111",
+  "authority": "",
+  "zetachain": {
+    "gateway": "GatewayAddress111111111111111111111111111",
+    "tss": "TssAddress1111111111111111111111111111111",
+    "chainId": 1001,
+    "supportedChains": [1, 56, 137, 1001]
+  },
+  "computeLimits": {
+    "unitLimit": 400000,
+    "unitPrice": 1
+  },
+  "features": {
+    "crossChainTransfers": true,
+    "metaplexCompatibility": true,
+    "tssVerification": true,
+    "replayProtection": true
+  },
+  "testing": {
+    "enabled": true,
+    "mockData": false,
+    "airdropAmount": 2
+  }
+}

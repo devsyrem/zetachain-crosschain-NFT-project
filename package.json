@@ -1,0 +1,30 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "A Solana program that enables secure cross-chain NFT transfers and interactions with ZetaChain's interoperability protocol. This program allows NFTs to be minted on Solana and transferred to other blockchains (Ethereum, BSC, Polygon, etc.) through ZetaChain's universal gateway.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@coral-xyz/anchor": "^0.31.1",
+    "@coral-xyz/anchor-cli": "^0.31.2",
+    "@solana/spl-token": "^0.4.13",
+    "@solana/web3.js": "^1.98.4",
+    "@types/chai": "^5.2.2",
+    "@types/mocha": "^10.0.10",
+    "axios": "^1.11.0",
+    "bs58": "^6.0.0",
+    "chai": "^5.2.1",
+    "ethers": "^6.15.0",
+    "ts-mocha": "^11.1.0",
+    "typescript": "^5.9.2"
+  }
+}

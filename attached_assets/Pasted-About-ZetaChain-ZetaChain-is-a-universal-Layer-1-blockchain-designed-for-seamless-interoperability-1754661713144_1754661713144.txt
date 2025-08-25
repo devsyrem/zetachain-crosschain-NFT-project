@@ -1,0 +1,59 @@
+About ZetaChain
+
+ZetaChain is a universal, Layer-1 blockchain designed for seamless interoperability across Solana, EVM, and non-EVM chains. We enable developers to build universal dApps with unified liquidity, messaging, and composability. Our goal is to facilitate a more interconnected blockchain ecosystem, allowing for the creation of universal applications that can leverage assets and data from Solana, Bitcoin and more. We aim to advance universal interoperability by building, improving, or documenting robust asset transfers between ZetaChain and Solana. Learn more at zetachain.com ↗.
+
+Mission
+
+Develop a Solana universal NFT program that supports robust cross-chain NFT transfers and interactions between ZetaChain and Solana, based on the requirements and findings outlined in this issue.
+
+Scope Detail
+
+Architect and implement a Solana NFT program that enables cross-chain minting, transfers, and ownership verification via ZetaChain’s protocol-contracts-solana gateway.
+Address Solana-specific challenges, including compute budget, rent exemption, token account creation, and signer management.
+Ensure compatibility with ZetaChain’s EVM and non-EVM cross-chain messaging protocols.
+Deliver clear, open-source documentation and usage examples for developers.
+Bonus: Provide reusable components, tutorials, or enhancements to onboarding for the ZetaChain/Solana NFT ecosystem.
+Submission Requirements
+
+Submit your code, documentation, and/or tooling via a public GitHub repository.
+Include clear instructions for setup, testing, and reproduction.
+Demonstrate working cross-chain NFT transfer or interaction between Solana and ZetaChain using gateway contracts.
+Address all Solana-specific requirements (compute budget, rent, token account creation, signer handling).
+Security best practices are required, including proper TSS/replay protection.
+Reference and address the requirements and recommendations in standard-contracts/issues/72.
+Judging Criteria
+
+Security, correctness, and reliability of the solution
+Code/documentation quality and clarity
+Impact, creativity, and reusability for the ecosystem
+Communication and responsiveness during the bounty window
+Bonus for submissions that enhance open-source resources or developer onboarding
+Resources
+
+protocol-contracts-solana gateway
+standard-contracts/issues/72
+https://www.zetachain.com/docs/developers/chains/solana/
+Example Solana program compatible with ZetaChain Gateway: https://github.com/zeta-chain/protocol-contracts-solana/blob/main/programs/examples/connected/src/lib.rs
+Reward Structure
+
+1st Place: 1000 USDC
+Total rewards: 1,000 USDC (1 prize)
+
+Deadline
+
+Submission deadline: Aug 6, 2025, 12:15 PM (America/Cancun)
+Winner announcement: Aug 20, 2025, 12:15 PM (America/Cancun)
+Skills Needed
+
+Solana development (Rust)
+Cross-chain protocols
+Solidity (for EVM compatibility)
+Security best practices
+Writing and documentation
+Point of Contact
+
+For technical support, collaboration, and real-time updates, join our Discord community ↗ and connect directly with the ZetaChain team and developers.
+Explore our open-source code, raise issues, or contribute via GitHub ↗.
+Point of Contact
+
+For questions or to engage with the team, reach out via Discord ↗ or open an issue/discussion on GitHub ↗.

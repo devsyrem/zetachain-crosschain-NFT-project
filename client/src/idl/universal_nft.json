@@ -1,0 +1,329 @@
+{
+  "version": "0.1.0",
+  "name": "universal_nft",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "program",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "authority",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "gatewayAddress",
+          "type": "publicKey"
+        },
+        {
+          "name": "tssAddress",
+          "type": "publicKey"
+        },
+        {
+          "name": "chainId",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "mintNft",
+      "accounts": [
+        {
+          "name": "nftAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "mint",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "tokenProgram",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "tokenId",
+          "type": "u64"
+        },
+        {
+          "name": "uri",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "symbol",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "crossChainTransfer",
+      "accounts": [
+        {
+          "name": "nftAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "owner",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "programState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "gatewayProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "tokenId",
+          "type": "u64"
+        },
+        {
+          "name": "destinationChainId",
+          "type": "u64"
+        },
+        {
+          "name": "destinationAddress",
+          "type": "bytes"
+        }
+      ]
+    },
+    {
+      "name": "receiveCrossChain",
+      "accounts": [
+        {
+          "name": "nftAccount",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "recipient",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "programState",
+          "isMut": true,
+          "isSigner": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "tokenId",
+          "type": "u64"
+        },
+        {
+          "name": "sourceChainId",
+          "type": "u64"
+        },
+        {
+          "name": "message",
+          "type": "bytes"
+        },
+        {
+          "name": "signature",
+          "type": "bytes"
+        },
+        {
+          "name": "nonce",
+          "type": "u64"
+        }
+      ]
+    },
+    {
+      "name": "verifyOwnership",
+      "accounts": [
+        {
+          "name": "nftAccount",
+          "isMut": false,
+          "isSigner": false
+        },
+        {
+          "name": "owner",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "tokenId",
+          "type": "u64"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "ProgramState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "authority",
+            "type": "publicKey"
+          },
+          {
+            "name": "gatewayAddress",
+            "type": "publicKey"
+          },
+          {
+            "name": "tssAddress",
+            "type": "publicKey"
+          },
+          {
+            "name": "chainId",
+            "type": "u64"
+          },
+          {
+            "name": "nonce",
+            "type": "u64"
+          },
+          {
+            "name": "isInitialized",
+            "type": "bool"
+          }
+        ]
+      }
+    },
+    {
+      "name": "NftState",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "tokenId",
+            "type": "u64"
+          },
+          {
+            "name": "owner",
+            "type": "publicKey"
+          },
+          {
+            "name": "mint",
+            "type": "publicKey"
+          },
+          {
+            "name": "uri",
+            "type": "string"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "symbol",
+            "type": "string"
+          },
+          {
+            "name": "isLocked",
+            "type": "bool"
+          },
+          {
+            "name": "lastTransferNonce",
+            "type": "u64"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CrossChainConfig",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "chainId",
+            "type": "u64"
+          },
+          {
+            "name": "isActive",
+            "type": "bool"
+          },
+          {
+            "name": "gatewayAddress",
+            "type": "bytes"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    {
+      "code": 6000,
+      "name": "InvalidAuthority",
+      "msg": "Invalid authority for this operation"
+    },
+    {
+      "code": 6001,
+      "name": "NftNotFound",
+      "msg": "NFT not found"
+    },
+    {
+      "code": 6002,
+      "name": "NftLocked",
+      "msg": "NFT is locked for cross-chain transfer"
+    },
+    {
+      "code": 6003,
+      "name": "InvalidSignature",
+      "msg": "Invalid TSS signature"
+    },
+    {
+      "code": 6004,
+      "name": "InvalidNonce",
+      "msg": "Invalid nonce for replay protection"
+    },
+    {
+      "code": 6005,
+      "name": "UnsupportedChain",
+      "msg": "Destination chain not supported"
+    },
+    {
+      "code": 6006,
+      "name": "AlreadyInitialized",
+      "msg": "Program already initialized"
+    }
+  ],
+  "metadata": {
+    "address": "UnivNFT111111111111111111111111111111111111"
+  }
+}
