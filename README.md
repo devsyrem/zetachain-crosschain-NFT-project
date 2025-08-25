@@ -51,7 +51,7 @@ A comprehensive Solana program enabling secure cross-chain NFT transfers between
 
 1. **Clone and setup**:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/devsyrem/zetachain-crosschain-NFT-project.git
    cd universal-nft-program
    npm run setup
    ```
